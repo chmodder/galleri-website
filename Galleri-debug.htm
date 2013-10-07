@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://localhost:5538/Default.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--
+
+	Inkluder den CSS fil der styrer styling af jQuery lightbox plugin.
+
+-->
+
+    <link rel="stylesheet" type="text/css" href="./Galleri-debug_files/opsaetning.css"><link rel="stylesheet" type="text/css" href="./Galleri-debug_files/form.css">
+
+    <!--
+	
+	jQuery lightbox benytter sig af jQuerys JavaScript biblioteket.
+	I skal derfor linke til følgende JavaScript filer herunder. JavaScript filerne er placeret I mappen js.
+
+	1. jquery.js
+	2. jquery.lightbox-0.5.js
+
+-->
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('.ikon a').lightBox();
+        });
+
+    </script><style type="text/css"></style>
+    <title>
+	Galleri
+</title>
+</head>
+<body style="">
+
+    <div id="main">
+
+        <div id="header"></div>
+
+        <div id="menu" class="navcontainer">
+
+            <h3>fotoalbums:</h3>
+
+            <nav>
+
+                <!--
+
+						MENU START: 
+						Herunder starter sitets statiske menu. Jeres opgave er at generere denne menu dynamisk.
+
+						I PRAKSIS:
+						1. DB: Opret forbindelse til projektes database.
+						2. SQL: Hent relevant data fra databasen.
+						3. PHP/C#: Benyt en løkke til at udskrive resultatet.
+
+						OVERVEJELSER:
+						Skal alle disse menu punkter være dynamiske?
+	 					Skal menuen defineres på ny i hver enkelt fil?
+
+					-->
+
+                <ul>
+
+                    <li><a href="http://localhost:5538/index.html">Velkommen</a></li>
+                    <li><a href="http://localhost:5538/undersider/faeroerne.html">Færøerne</a></li>
+                    <li><a href="http://localhost:5538/undersider/berlin.html">Berlin</a></li>
+                    <li><a href="http://localhost:5538/undersider/nytaar.html">Nytår</a></li>
+
+                </ul>
+
+                <!-- 
+
+						MENU SLUT 
+
+					-->
+
+            </nav>
+
+        </div>
+
+    </div>
+
+    <div id="content">
+
+
+        <form method="post" action="./Galleri-debug_files/Galleri-debug.htm" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="abN67gRn7WK6j74gDsdI4rIFpB7aub65jOfX7bpiB9S7aVBnnAI5Py/o+l6n6NQ/8s0QP8hDx5HOMs5sB9Fe+WFiGE+ByiO5nxzEVa1XEGE=">
+</div>
+
+
+
+            
+
+    <div id="content_midt"></div>
+
+        <div id="content_right">
+
+            <!--
+					
+						BILLEDUDTRÆK START:
+						Herunder er forsidens 8 billeder defineret statisk. Jeres opgave er at generere et 
+						dynamisk udtræk, begrænset til 8 tilfældige billeder.
+	 
+	 					POPUP:
+						1. jQuery Lightbox - Følg instruktionen i dokumentets <head></head>
+						2. Hvert thumbnail skal være et link som peger på den store udgave af billedet på serveren.
+	 
+	 					I PRAKSIS:
+						1. DB: Opret forbindelse til projektes database.
+						2. SQL: Hent relevant data fra databasen.
+						3. PHP/C#: Benyt en løkke til at udskrive resultatet.
+					
+					-->
+
+            <div class="ikon">
+                <a href="http://localhost:5538/foto/berlin_skyer.jpg">
+                    <img src="./Galleri-debug_files/berlin_skyer.jpg" alt=""></a>
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/j_museum.jpg" alt="">
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/j_museum_1.jpg" alt="">
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/hus_i_taagen.jpg" alt="">
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/nytaar2.jpg" alt="">
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/nytaar5.jpg" alt="">
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/j_museum_4.jpg" alt="">
+            </div>
+            <div class="ikon">
+                <img src="./Galleri-debug_files/lobra.jpg" alt="">
+            </div>
+
+            <!--
+	 
+						BILLEDUDTRÆK SLUT!
+	 
+					-->
+
+        </div>
+
+
+
+
+        </form>
+
+    </div>
+
+    <footer>
+
+        <div id="footer"></div>
+
+    </footer>
+
+
+
+
+
+</body></html>

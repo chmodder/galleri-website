@@ -1,20 +1,114 @@
-ï»¿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <!--
+
+	Inkluder den CSS fil der styrer styling af jQuery lightbox plugin.
+
+-->
+
+    <link rel="stylesheet" type="text/css" href="css/opsaetning.css" />
+    <link rel="stylesheet" type="text/css" href="css/form.css" />
+
+    <!--
+	
+	jQuery lightbox benytter sig af jQuerys JavaScript biblioteket.
+	I skal derfor linke til følgende JavaScript filer herunder. JavaScript filerne er placeret I mappen js.
+
+	1. jquery.js
+	2. jquery.lightbox-0.5.js
+
+-->
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('.ikon a').lightBox();
+        });
+
+    </script>
+    <title>Galleri</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+
+    <div id="main">
+
+        <div id="header"></div>
+
+        <div id="menu" class="navcontainer">
+
+            <h3>fotoalbums:</h3>
+
+            <nav>
+
+                <!--
+
+						MENU START: 
+						Herunder starter sitets statiske menu. Jeres opgave er at generere denne menu dynamisk.
+
+						I PRAKSIS:
+						1. DB: Opret forbindelse til projektes database.
+						2. SQL: Hent relevant data fra databasen.
+						3. PHP/C#: Benyt en løkke til at udskrive resultatet.
+
+						OVERVEJELSER:
+						Skal alle disse menu punkter være dynamiske?
+	 					Skal menuen defineres på ny i hver enkelt fil?
+
+					-->
+
+                <ul>
+
+                    <li><a href="index.html">Velkommen</a></li>
+                    <li><a href="undersider/faeroerne.html">Færøerne</a></li>
+                    <li><a href="undersider/berlin.html">Berlin</a></li>
+                    <li><a href="undersider/nytaar.html">Nytår</a></li>
+
+                </ul>
+
+                <!-- 
+
+						MENU SLUT 
+
+					-->
+
+            </nav>
+
+        </div>
+
+
+    <div id="content">
+
+
+        <form id="form1" runat="server">
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </form>
+
     </div>
-    </form>
+
+    <footer>
+
+        <div id="footer"></div>
+
+    </footer>
+
+        
+    </div>
+
 </body>
 </html>
+
+
+
