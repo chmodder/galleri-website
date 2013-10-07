@@ -2,6 +2,10 @@
 ## Eclipse
 #################
 
+# Excluding images
+foto/
+fotothumbs/
+
 *.pydevproject
 .project
 .metadata

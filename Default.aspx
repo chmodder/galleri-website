@@ -25,31 +25,31 @@
 					
 					-->
 
-            <div class="ikon">
+            <%--<div class="ikon">
                 <a href="foto/berlin_skyer.jpg">
-                    <img src="foto_ikon/berlin_skyer.jpg" alt="" /></a>
+                    <img src="fotothumbs/berlin_skyer.jpg" alt="" /></a>
             </div>
             <div class="ikon">
-                <img src="foto_ikon/j_museum.jpg" alt="" />
+                <img src="fotothumbs/j_museum.jpg" alt="" />
             </div>
             <div class="ikon">
-                <img src="foto_ikon/j_museum_1.jpg" alt="" />
+                <img src="fotothumbs/j_museum_1.jpg" alt="" />
             </div>
             <div class="ikon">
-                <img src="foto_ikon/hus_i_taagen.jpg" alt="" />
+                <img src="fotothumbs/hus_i_taagen.jpg" alt="" />
             </div>
             <div class="ikon">
-                <img src="foto_ikon/nytaar2.jpg" alt="" />
+                <img src="fotothumbs/nytaar2.jpg" alt="" />
             </div>
             <div class="ikon">
-                <img src="foto_ikon/nytaar5.jpg" alt="" />
+                <img src="fotothumbs/nytaar5.jpg" alt="" />
             </div>
             <div class="ikon">
-                <img src="foto_ikon/j_museum_4.jpg" alt="" />
+                <img src="fotothumbs/j_museum_4.jpg" alt="" />
             </div>
             <div class="ikon">
-                <img src="foto_ikon/lobra.jpg" alt="" />
-            </div>
+                <img src="fotothumbs/lobra.jpg" alt="" />
+            </div>--%>
 
             <!--
 	 
