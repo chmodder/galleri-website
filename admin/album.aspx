@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="default.aspx.cs" Inherits="admin_default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="album.aspx.cs" Inherits="admin_album" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
 </asp:Content>

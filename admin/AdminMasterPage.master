@@ -1,20 +1,117 @@
-ï»¿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="admin_AdminMasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="admin_AdminMasterPage" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+<head id="Head1" runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <!--
+
+	Inkluder den CSS fil der styrer styling af jQuery lightbox plugin.
+
+-->
+
+    <link rel="stylesheet" type="text/css" href="../css/opsaetning.css" />
+    <link rel="stylesheet" type="text/css" href="../css/form.css" />
+
+    <!--
+	
+	jQuery lightbox benytter sig af jQuerys JavaScript biblioteket.
+	I skal derfor linke til følgende JavaScript filer herunder. JavaScript filerne er placeret I mappen js.
+
+	1. jquery.js
+	2. jquery.lightbox-0.5.js
+
+-->
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('.ikon a').lightBox();
+        });
+
+    </script>
+    <title>Galleri-Admin</title>
+    <asp:ContentPlaceHolder ID="head2" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+
+    <div id="main">
+
+        <div id="header"></div>
+
+        <div id="menu" class="navcontainer">
+
+            <h3>fotoalbums:</h3>
+
+            <nav>
+
+                <!--
+
+						MENU START: 
+						Herunder starter sitets statiske menu. Jeres opgave er at generere denne menu dynamisk.
+
+						I PRAKSIS:
+						1. DB: Opret forbindelse til projektes database.
+						2. SQL: Hent relevant data fra databasen.
+						3. PHP/C#: Benyt en løkke til at udskrive resultatet.
+
+						OVERVEJELSER:
+						Skal alle disse menu punkter være dynamiske?
+	 					Skal menuen defineres på ny i hver enkelt fil?
+
+					-->
+
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT [Id],[navn] FROM [Album] ORDER BY [navn]"></asp:SqlDataSource>
+
+                <ul>
+                    <li><a href="default.aspx">Admin forside</a></li>
+                    <asp:Repeater ID="RepeaterMenu" runat="server" DataSourceID="SqlDataSource1">
+
+                        <ItemTemplate>
+                            <li><a href="album.aspx?id=<%#Eval("Id") %>"><%#Eval("navn") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+
+                <!-- 
+
+						MENU SLUT 
+
+					-->
+
+            </nav>
+
+        </div>
+
+
+    <div id="content">
+
+
+        <form id="form2" runat="server">
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </form>
+
     </div>
-    </form>
+
+    <footer>
+
+        <div id="footer"><a href="../default.aspx">Admin login</a></div>
+
+    </footer>
+
+        
+    </div>
+
 </body>
 </html>
+
+
+

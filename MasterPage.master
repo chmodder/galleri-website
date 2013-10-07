@@ -65,13 +65,16 @@
 
 					-->
 
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT [Id],[navn] FROM [Album] ORDER BY [navn]"></asp:SqlDataSource>
+
                 <ul>
+                    <li><a href="default.aspx">Forside</a></li>
+                    <asp:Repeater ID="RepeaterMenu" runat="server" DataSourceID="SqlDataSource1">
 
-                    <li><a href="index.html">Velkommen</a></li>
-                    <li><a href="undersider/faeroerne.html">Færøerne</a></li>
-                    <li><a href="undersider/berlin.html">Berlin</a></li>
-                    <li><a href="undersider/nytaar.html">Nytår</a></li>
-
+                        <ItemTemplate>
+                            <li><a href="album.aspx?id=<%#Eval("Id") %>"><%#Eval("navn") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </ul>
 
                 <!-- 
@@ -100,7 +103,9 @@
 
     <footer>
 
-        <div id="footer"></div>
+        <div id="footer">
+            <a href="admin/default.aspx">Admin login</a>
+        </div>
 
     </footer>
 
