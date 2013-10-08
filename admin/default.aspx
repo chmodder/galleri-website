@@ -1,7 +1,50 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="default.aspx.cs" Inherits="admin_default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="Server">
+
+    <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT Album.Id AS AlbumId, Billeder.imgnavn AS billede, Album.navn AS albums FROM [Billeder] INNER JOIN Album ON Album.Id = Billeder.fkAlbumId"></asp:SqlDataSource>
+
+    <table class="table table-striped">
+
+
+        <a href="opretAlbum.aspx">Opret Album</a>
+
+        <tr>
+            <th>Navn</th>
+            <th>Antal billeder i Albummet</th>
+        </tr>
+
+        <asp:Repeater ID="RepeaterAlbums" DataSourceID="SqlDataAlbums" runat="server">
+
+
+
+
+            <ItemTemplate>
+
+                <tr>
+                    <th><%# Eval ("albums") %></th>
+                    <%--<th><%# Eval ("email") %></th>--%>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <a href="visBilleder.aspx?id=<%# Eval("AlbumId") %>" class="btn btn-xs btn-info">Vis Billeder</a>
+                    </td>
+                    <td>
+                        <a href="redigerAlbum.aspx?id=<%# Eval("AlbumId") %>" class="btn btn-xs btn-danger">Rediger Album</a>
+                    </td>
+                    <td>
+                        <a href="sletAlbum.aspx?id=<%# Eval("AlbumId") %>" class="btn btn-xs btn-info">Slet Album</a>
+                    </td>
+                </tr>
+
+            </ItemTemplate>
+
+        </asp:Repeater>
+
+    </table>
+
 </asp:Content>
 
