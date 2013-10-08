@@ -4,7 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
 
-    
+    <input id="newAlbumInput" type="text" placeholder="Skriv album-navnet her" />
+    <asp:Button ID="gemAlbumBtn" runat="server" Text="Gem album" OnClick="gemAlbumBtn_Click" />
 
 </asp:Content>
 

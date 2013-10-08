@@ -11,4 +11,8 @@ public partial class admin_opretAlbum : System.Web.UI.Page
     {
 
     }
+    protected void gemAlbumBtn_Click(object sender, EventArgs e)
+    {
+
+    }
 }
