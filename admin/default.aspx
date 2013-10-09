@@ -4,7 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="Server">
 
-    <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT Album.Id AS AlbumId, Billeder.imgnavn AS billede, Album.navn AS albums FROM [Billeder] INNER JOIN Album ON Album.Id = Billeder.fkAlbumId"></asp:SqlDataSource>
+    <%--<asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT Album.Id AS AlbumId, Billeder.imgnavn AS billede, Album.navn AS albums FROM [Billeder] INNER JOIN Album ON Album.Id = Billeder.fkAlbumId"></asp:SqlDataSource>--%>
+
+    <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM Album"></asp:SqlDataSource>
 
     <table class="table table-striped">
 
@@ -24,19 +26,19 @@
             <ItemTemplate>
 
                 <tr>
-                    <th><%# Eval ("albums") %></th>
-                    <%--<th><%# Eval ("email") %></th>--%>
+                    <th><%# Eval ("navn") %></th>
+                    <%--<th><%# Eval ("imgnavn") %></th>--%>
                     <td>
                         
                     </td>
                     <td>
-                        <a href="visBilleder.aspx?id=<%# Eval("AlbumId") %>" class="btn btn-xs btn-info">Vis Billeder</a>
+                        <a href="visBilleder.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-info">Vis Billeder</a>
                     </td>
                     <td>
-                        <a href="redigerAlbum.aspx?id=<%# Eval("AlbumId") %>" class="btn btn-xs btn-danger">Rediger Album</a>
+                        <a href="redigerAlbum.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-danger">Rediger Album</a>
                     </td>
                     <td>
-                        <a href="sletAlbum.aspx?id=<%# Eval("AlbumId") %>" class="btn btn-xs btn-info">Slet Album</a>
+                        <a href="sletAlbum.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-info">Slet Album</a>
                     </td>
                 </tr>
 

@@ -4,8 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
 
-    <input id="newAlbumInput" type="text" placeholder="Skriv album-navnet her" />
+    <asp:TextBox ID="newAlbumInput" runat="server" Text="Skriv album navn her"></asp:TextBox>
+    <%--<input id="newAlbumInput" type="text" placeholder="Skriv album-navnet her" />--%>
     <asp:Button ID="gemAlbumBtn" runat="server" Text="Gem album" OnClick="gemAlbumBtn_Click" />
+    <asp:Panel ID="PanelMsgSuccess" runat="server" Visible="False">Succes!! Albummet er oprettet</asp:Panel>
 
 </asp:Content>
 

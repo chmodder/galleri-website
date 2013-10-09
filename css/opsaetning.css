@@ -12,7 +12,8 @@ div{
 {
 	width:				955px;
 	height:				600px;
-	background-image:	url(../bg/galleri_bg.jpg);
+	/*background-image:	url(../bg/galleri_bg.jpg);*/
+    background-color:grey;
 	margin:				auto;
 }
 #header
