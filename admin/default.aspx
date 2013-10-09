@@ -6,7 +6,16 @@
 
     <%--<asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT Album.Id AS AlbumId, Billeder.imgnavn AS billede, Album.navn AS albums FROM [Billeder] INNER JOIN Album ON Album.Id = Billeder.fkAlbumId"></asp:SqlDataSource>--%>
 
-    <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM Album"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' 
+                            SelectCommand="SELECT MAX (Album.Id) AS Id, 
+                                           MAX (Album.navn) AS navn, 
+                                           COUNT(Billeder.Id) AS antalBilleder 
+                                           FROM Billeder 
+                                           INNER JOIN Album 
+                                           ON Billeder.fkAlbumId = Album.Id GROUP BY Album.Id">
+        </asp:SqlDataSource>
+
+  <%--  <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM Album"></asp:SqlDataSource>--%>
 
     <table class="table table-striped">
 
@@ -15,7 +24,7 @@
 
         <tr>
             <th>Navn</th>
-            <th>Antal billeder i Albummet</th>
+            <th>Antal billeder</th>
         </tr>
 
         <asp:Repeater ID="RepeaterAlbums" DataSourceID="SqlDataAlbums" runat="server">
@@ -26,11 +35,8 @@
             <ItemTemplate>
 
                 <tr>
-                    <th><%# Eval ("navn") %></th>
-                    <%--<th><%# Eval ("imgnavn") %></th>--%>
-                    <td>
-                        
-                    </td>
+                    <td><%# Eval ("navn") %></td>
+                    <td><%# Eval ("AntalBilleder") %></td>
                     <td>
                         <a href="visBilleder.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-info">Vis Billeder</a>
                     </td>
