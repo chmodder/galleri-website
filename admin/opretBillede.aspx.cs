@@ -44,14 +44,14 @@ public partial class admin_opretBillede : System.Web.UI.Page
     {
         try
         {
-        // Upload originalen til mappen /images/upload/original/
-        FileUpload_img.SaveAs(Server.MapPath("/upload/originals/") + FileUpload_img.FileName);
+            // Upload originalen til mappen /images/upload/original/
+            FileUpload_img.SaveAs(Server.MapPath("/upload/originals/") + FileUpload_img.FileName);
 
             // Kald Metoden MakeThumbs, som laver en Reisze af originalen til 768px i bredden og uploader den til originalsResized mappen 
-        MakeThumb(FileUpload_img.FileName, "/upload/originals/", 768, "/upload/originalsResized/");
+            MakeThumb(FileUpload_img.FileName, "/upload/originals/", 768, "/upload/originalsResized/");
 
             // Kald Metoden MakeThumbs, som laver en Thumbnail og uploader den til Thumbs mappen
-        MakeThumb(FileUpload_img.FileName, "/upload/originals/", 120, "/upload/thumbs/");
+            MakeThumb(FileUpload_img.FileName, "/upload/originals/", 120, "/upload/thumbs/");
 
             // Insert i databasen
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
@@ -68,6 +68,8 @@ public partial class admin_opretBillede : System.Web.UI.Page
 
             // Besked om at billedet er gemt
             Label_besked.Text = "<div class='span6 offset1'><div class='alert alert-success'>Billedet blev gemt</div></div>";
+
+            billedTekst.Text = "Skriv billedtekst her";
 
             Page_Load(null, null);
         }
@@ -167,8 +169,13 @@ public partial class admin_opretBillede : System.Web.UI.Page
         }
         return null;
     }
-    #endregion
-
-    #endregion
-
+    protected void tilbageBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("visBilleder.aspx?id=" + Request.QueryString["id"]);
+    }
 }
+    #endregion
+
+    #endregion
+
+    

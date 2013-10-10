@@ -41,7 +41,7 @@
 </head>
 <body>
 
-    <div id="main">
+    <div id="mainAdmin">
 
         <div id="header"></div>
 
@@ -90,7 +90,7 @@
         </div>
 
 
-    <div id="content">
+    <div id="contentAdmin">
 
 
         <form id="form2" runat="server">

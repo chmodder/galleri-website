@@ -3,8 +3,8 @@
 #################
 
 # Excluding images
-foto/
-fotothumbs/
+upload/*
+
 
 *.pydevproject
 .project

@@ -20,6 +20,7 @@
                 <label>Oprettet</label></th>
             <th>
                 <label>Sidst ændret</label></th>
+            <th></th>
         </tr>
 
         <asp:Repeater ID="RepeaterAlbum" runat="server">
@@ -44,6 +45,7 @@
                     <td>
                         <a href="SletBilleder.aspx?id=<%# Eval("Id") %>">Slet Billedet</a>
                         <%--<asp:Button ID="sletButton" runat="server" Text="Slet billede" OnClick="sletButton_Click" CommandArgument = '<%# Eval("Id") %>' />--%></td>
+
                 </tr>
 
             </ItemTemplate>

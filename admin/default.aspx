@@ -4,7 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="Server">
 
-    <%--<asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT Album.Id AS AlbumId, Billeder.imgnavn AS billede, Album.navn AS albums FROM [Billeder] INNER JOIN Album ON Album.Id = Billeder.fkAlbumId"></asp:SqlDataSource>--%>
 
     <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' 
                             SelectCommand="SELECT MAX (Album.Id) AS Id, 
@@ -15,7 +14,6 @@
                                            ON Billeder.fkAlbumId = Album.Id GROUP BY Album.Id">
         </asp:SqlDataSource>
 
-  <%--  <asp:SqlDataSource ID="SqlDataAlbums" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM Album"></asp:SqlDataSource>--%>
 
     <table class="table table-striped">
 
