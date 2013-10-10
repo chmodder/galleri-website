@@ -36,6 +36,7 @@
 
                 <tr>
                     <td><%# Eval ("navn") %></td>
+                    
                     <td><%# Eval ("AntalBilleder") %></td>
                     <td>
                         <a href="visBilleder.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-info">Vis Billeder</a>
