@@ -113,3 +113,20 @@ a:hover {
 	font-size: 						10px;
 	color:							#663333;
 }
+
+.adminLink:link {
+	font-family: 					Verdana, Arial, Helvetica, sans-serif;
+	font-size: 						10px;
+	color:							#f00;
+}
+.adminLink:visited {
+	font-family: 					Verdana, Arial, Helvetica, sans-serif;
+	font-size: 						10px;
+	color: 							#ff3737;
+}
+.adminLink:hover {
+	font-family: 					Verdana, Arial, Helvetica, sans-serif;
+	font-size: 						10px;
+	color:							#ffa7a7;
+}
+

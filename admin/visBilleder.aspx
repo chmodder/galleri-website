@@ -32,18 +32,16 @@
                         <img src="/upload/thumbs/<%# Eval ("imgnavn") %>" width="72" height="72" alt="" /></a></td>
                     <td>
                         <span id="albumnavn" runat="server"><%# Eval ("Id") %></span></td>
+                    
                     <td>
-
-                    </td>
-                    <%--<td>
-                        <span ID="albumID" runat="server"><%# Eval ("imgnavn") %></span></td>--%>
+                        <span ID="albumID" runat="server"><%# Eval ("imgnavn") %></span></td>
 
                     <td>
                         <span id="albumoprettetDen" runat="server"><%# Eval ("oprettetDen") %></span></td>
                     <td>
                         <span id="albumredigeretDen" runat="server"><%# Eval ("redigeretDen") %></span></td>
                     <td>
-                        <a href="SletBilleder.aspx?id=<%# Eval("Id") %>">Slet Billedet</a>
+                        <a class="adminLink" href="SletBilleder.aspx?id=<%# Eval("Id") %>">Slet Billedet</a>
                         <%--<asp:Button ID="sletButton" runat="server" Text="Slet billede" OnClick="sletButton_Click" CommandArgument = '<%# Eval("Id") %>' />--%></td>
 
                 </tr>
