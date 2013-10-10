@@ -32,8 +32,8 @@
             <ItemTemplate>
 
                 <div class="ikon">
-                    <a href="img/upload/originalsResized/<%# Eval ("imgnavn") %>">
-                        <img src="img/upload/thumbs/<%# Eval ("thumbnavn") %>" alt="<%# Eval ("alt") %>" /></a>
+                    <a href="upload/originalsResized/<%# Eval ("imgnavn") %>" title="<%# Eval ("alt") %>">
+                        <img src="upload/thumbs/<%# Eval ("thumbnavn") %>" alt="" /></a>
                 </div>
 
             </ItemTemplate>
