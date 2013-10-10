@@ -5,9 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
 
     <asp:TextBox ID="newAlbumInput" runat="server" Text="Skriv album navn her"></asp:TextBox>
+
     <%--<input id="newAlbumInput" type="text" placeholder="Skriv album-navnet her" />--%>
+
     <asp:Button ID="gemAlbumBtn" runat="server" Text="Gem album" OnClick="gemAlbumBtn_Click" />
+
     <a class="adminLink" href="default.aspx">Tilbage til album-oversigten</a>
+
     <asp:Panel ID="PanelMsgSuccess" runat="server" Visible="False">Succes!! Albummet er oprettet</asp:Panel>
 
 </asp:Content>

@@ -37,13 +37,13 @@
                     
                     <td><%# Eval ("AntalBilleder") %></td>
                     <td>
-                        <a class="adminLink" href="visBilleder.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-info">Vis Billeder</a>
+                        <a class="adminLink" href="visBilleder.aspx?id=<%# Eval("Id") %>">Vis Billeder</a>
                     </td>
                     <td>
-                        <a class="adminLink" href="redigerAlbum.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-danger">Rediger Album</a>
+                        <a class="adminLink" href="redigerAlbum.aspx?id=<%# Eval("Id") %>">Rediger Album</a>
                     </td>
                     <td>
-                        <a class="adminLink" href="sletAlbum.aspx?id=<%# Eval("Id") %>" class="btn btn-xs btn-info">Slet Album</a>
+                        <a class="adminLink" href="sletAlbum.aspx?id=<%# Eval("Id") %>">Slet Album</a>
                     </td>
                 </tr>
 

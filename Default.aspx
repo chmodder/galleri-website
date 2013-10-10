@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="default.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <div id="content_midt"></div>
 
-        <div id="content_right">
+    <div id="content_right">
 
-            <!--
+        <!--
 					
 						BILLEDUDTRÆK START:
 						Herunder er forsidens 8 billeder defineret statisk. Jeres opgave er at generere et 
@@ -25,39 +25,28 @@
 					
 					-->
 
-            <%--<div class="ikon">
-                <a href="foto/berlin_skyer.jpg">
-                    <img src="fotothumbs/berlin_skyer.jpg" alt="" /></a>
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/j_museum.jpg" alt="" />
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/j_museum_1.jpg" alt="" />
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/hus_i_taagen.jpg" alt="" />
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/nytaar2.jpg" alt="" />
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/nytaar5.jpg" alt="" />
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/j_museum_4.jpg" alt="" />
-            </div>
-            <div class="ikon">
-                <img src="fotothumbs/lobra.jpg" alt="" />
-            </div>--%>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT TOP (8) Id, imgnavn, thumbnavn, alt FROM Billeder ORDER BY NEWID()"></asp:SqlDataSource>
 
-            <!--
+        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+
+            <ItemTemplate>
+
+                <div class="ikon">
+                    <a href="img/upload/originalsResized/<%# Eval ("imgnavn") %>">
+                        <img src="img/upload/thumbs/<%# Eval ("thumbnavn") %>" alt="<%# Eval ("alt") %>" /></a>
+                </div>
+
+            </ItemTemplate>
+
+        </asp:Repeater>
+
+        <!--
 	 
 						BILLEDUDTRÆK SLUT!
 	 
 					-->
 
-        </div>
+    </div>
 
 
 </asp:Content>

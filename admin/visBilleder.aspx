@@ -29,7 +29,7 @@
 
                 <tr>
                     <td><a href="/upload/originalsResized/<%# Eval ("imgnavn") %>" title="<%# Eval ("alt") %>">
-                        <img src="/upload/thumbs/<%# Eval ("imgnavn") %>" width="72" height="72" alt="" /></a></td>
+                        <img src="/upload/thumbs/<%# Eval ("thumbnavn") %>" width="72" height="72" alt="<%# Eval ("alt") %>" /></a></td>
                     <td>
                         <span id="albumnavn" runat="server"><%# Eval ("Id") %></span></td>
                     
