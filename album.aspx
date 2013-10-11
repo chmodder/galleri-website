@@ -8,7 +8,29 @@
 
         <div id="content_top_album">
 
-            <h1>Færøerne</h1>
+
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT [navn] FROM [Album] WHERE Id = @id">
+
+                <SelectParameters>
+
+                    <asp:QueryStringParameter QueryStringField="id" Name="id" Type="String" />
+
+                </SelectParameters>
+
+            </asp:SqlDataSource>
+
+
+
+            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+
+                <ItemTemplate>
+
+                    <h1><%# Eval ("navn") %></h1>
+
+                </ItemTemplate>
+
+            </asp:Repeater>
 
         </div>
 
@@ -29,12 +51,8 @@
 
             </ItemTemplate>
         </asp:Repeater>
+        <asp:Panel CssClass="white" ID="meddelelse" runat="server" Visible="False">Albummet er tomt</asp:Panel>
 
-
-        <%--<div class="ikon"><img src="../foto_ikon/post_skib.jpg" alt="" /></div>
-						<div class="ikon"><img src="../foto_ikon/hus_i_taagen.jpg" alt="" /></div>
-						<div class="ikon"><img src="../foto_ikon/vaedder.jpg" alt="" /></div>
-						<div class="ikon"><img src="../foto_ikon/lobra.jpg" alt="" /></div>     --%>
     </div>
 
 </asp:Content>

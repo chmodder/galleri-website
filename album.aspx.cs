@@ -32,17 +32,34 @@ public partial class album : System.Web.UI.Page
         conn.Open();
 
         SqlDataReader reader = cmd.ExecuteReader();
-        RepeaterAlbum.DataSource = reader;
-        RepeaterAlbum.DataBind();
 
-        //if (reader.Read())
-        //{
-        //    albumnavn.Text = reader["imgnavn"].ToString();
-        //    albumID.Text = reader["Id"].ToString();
-        //    albumoprettetDen.Text = String.Format("{0:yyyy'/'MM'/'dd}", reader["oprettetDen"]);
-        //    albumredigeretDen.Text = String.Format("{0:yyyy'/'MM'/'dd}", reader["redigeretDen"]);
-        //}
+        if (reader.HasRows)
+        {
+            
 
+
+            RepeaterAlbum.DataSource = reader;
+            RepeaterAlbum.DataBind();
+
+
+
+
+            //if (reader.Read())
+            //{
+            //    albumnavn.Text = reader["imgnavn"].ToString();
+            //    albumID.Text = reader["Id"].ToString();
+            //    albumoprettetDen.Text = String.Format("{0:yyyy'/'MM'/'dd}", reader["oprettetDen"]);
+            //    albumredigeretDen.Text = String.Format("{0:yyyy'/'MM'/'dd}", reader["redigeretDen"]);
+            //}
+
+
+           
+            
+        }
+        else
+        {
+            meddelelse.Visible = true;
+        }
 
         // Luk for forbindelsen til databasen
         // reader.Close();

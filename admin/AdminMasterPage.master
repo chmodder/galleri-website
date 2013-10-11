@@ -74,7 +74,7 @@
                     <asp:Repeater ID="RepeaterMenu" runat="server" DataSourceID="SqlDataSource1">
 
                         <ItemTemplate>
-                            <li><a href="album.aspx?id=<%#Eval("Id") %>"><%#Eval("navn") %></a></li>
+                            <li><a href="visBilleder.aspx?id=<%#Eval("Id") %>"><%#Eval("navn") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>

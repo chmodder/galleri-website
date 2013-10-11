@@ -10,7 +10,7 @@
                                            MAX (Album.navn) AS navn, 
                                            COUNT(Billeder.Id) AS antalBilleder 
                                            FROM Billeder 
-                                           INNER JOIN Album 
+                                           RIGHT JOIN Album 
                                            ON Billeder.fkAlbumId = Album.Id GROUP BY Album.Id">
         </asp:SqlDataSource>
 

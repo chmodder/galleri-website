@@ -8,6 +8,14 @@ div{
 	
 }
 
+.white 
+{
+    color:white;
+    margin-left:30px;
+    margin-top:20px;
+    font-size: 20px;
+}
+
 td
 {
     border: 1px solid black;

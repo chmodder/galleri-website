@@ -43,8 +43,8 @@ public partial class admin_SletBilleder : System.Web.UI.Page
 
         if (reader.Read())
         {
-            billedenavn.Text = reader["imgnavn"].ToString();
             billedeID.Text = reader["Id"].ToString();
+            billedenavn.Text = reader["imgnavn"].ToString();
         }
 
 
@@ -60,20 +60,20 @@ public partial class admin_SletBilleder : System.Web.UI.Page
         try
         {
             // slet Originalfilen i image/upload/Original/ mappen
-            File.Delete(Server.MapPath("~/img/upload/originals/" + Request.QueryString["id"].ToString()));
+            File.Delete(Server.MapPath("~/upload/originals/" + Request.QueryString["id"].ToString()));
 
             // Slet Thumbsfilen i /Images/Upload/Thumbs/
-            File.Delete(Server.MapPath("~/img/upload/thumbs/" + Request.QueryString["id"].ToString()));
+            File.Delete(Server.MapPath("~/upload/thumbs/" + Request.QueryString["id"].ToString()));
 
             // Slet Resized_Original i /Images/Upload/Resized_Original/ mappen
-            File.Delete(Server.MapPath("~/img/upload/originalsResized/" + Request.QueryString["id"].ToString()));
+            File.Delete(Server.MapPath("~/upload/originalsResized/" + Request.QueryString["id"].ToString()));
 
             // slet filen i databasen
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "DELETE FROM Media WHERE ImageName = @ImageName";
-            cmd.Parameters.Add("@ImageName", SqlDbType.NVarChar).Value = Request.QueryString["id"].ToString();
+            cmd.CommandText = "DELETE FROM Billeder WHERE Id = @ImageId";
+            cmd.Parameters.Add("@ImageId", SqlDbType.Int).Value = Request.QueryString["id"].ToString();
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();

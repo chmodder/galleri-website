@@ -12,16 +12,21 @@
     <table>
 
         <tr>
+
             <th>
                 <label>Billede-ID</label></th>
             <th>
                 <label>Billede-navn</label></th>
+
         </tr>
+
         <tr>
-            <td>
-                <asp:Label ID="billedenavn" runat="server"></asp:Label></td>
+            
             <td>
                 <asp:Label ID="billedeID" runat="server"></asp:Label></td>
+            <td>
+                <asp:Label ID="billedenavn" runat="server"></asp:Label></td>
+            
         </tr>
 
        </table>
