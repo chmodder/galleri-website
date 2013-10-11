@@ -53,7 +53,7 @@ public partial class admin_redigerAlbum : System.Web.UI.Page
         cmd.Connection = conn;
 
         //Sql	sætningen
-        cmd.CommandText = "UPDATE album SET navn=@albumnavn, redigeretDen=@redigeretDen WHERE Id = @urlId";
+        cmd.CommandText = "UPDATE album SET navn = @albumnavn, redigeretDen = @redigeretDen WHERE Id = @urlId";
         
         //	Parametrene	@brugernavn	og	@password	i	sql	sætningen	ovenover	tilføjes
         cmd.Parameters.Add("@urlId", SqlDbType.Int).Value = Request.QueryString["id"];
