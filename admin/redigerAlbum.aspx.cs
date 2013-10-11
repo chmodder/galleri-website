@@ -53,7 +53,7 @@ public partial class admin_redigerAlbum : System.Web.UI.Page
         cmd.Connection = conn;
 
         //Sql	sætningen
-        cmd.CommandText = "UPDATE album SET navn = @albumnavn, redigeretDen = @redigeretDen WHERE Id = @urlId";
+        cmd.CommandText = "UPDATE [album] SET [navn] = @albumnavn, [redigeretDen] = @redigeretDen WHERE [Id] = @urlId";
         
         //	Parametrene	@brugernavn	og	@password	i	sql	sætningen	ovenover	tilføjes
         cmd.Parameters.Add("@urlId", SqlDbType.Int).Value = Request.QueryString["id"];
@@ -72,10 +72,10 @@ public partial class admin_redigerAlbum : System.Web.UI.Page
         ////Udskriver beskeden om at beskeden er slettet.
         //albumSletAlbum.Text = "<div class='span8'><div class='alert alert-success'>Beskeden er slettet</div></div>";
 
-        //sletter indholdet fra tekstboksene.
-        redigerID.Text = "";
-        redigernavn.Text = "";
-        redigeroprettetDen.Text = "";
-        redigerredigeretDen.Text = "";
+        ////sletter indholdet fra tekstboksene.
+        //redigerID.Text = "";
+        //redigernavn.Text = "";
+        //redigeroprettetDen.Text = "";
+        //redigerredigeretDen.Text = "";
     }
 }
