@@ -72,7 +72,7 @@ public partial class admin_redigerAlbum : System.Web.UI.Page
         ////Udskriver beskeden om at beskeden er slettet.
         //albumSletAlbum.Text = "<div class='span8'><div class='alert alert-success'>Beskeden er slettet</div></div>";
 
-        //sletter indholdet fra tekstboksene
+        //sletter indholdet fra tekstboksene.
         redigerID.Text = "";
         redigernavn.Text = "";
         redigeroprettetDen.Text = "";
