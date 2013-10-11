@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
+    
+    <asp:Label ID="Label_msg" runat="server" Text=""></asp:Label>
+
         <table>
 
         <tr>
@@ -15,6 +18,7 @@
             <th>
                 <label>Sidst redigeret dato</label></th>
         </tr>
+
         <tr>
             <td>
                 <asp:Label ID="redigerID" runat="server"></asp:Label></td>
@@ -35,10 +39,8 @@
             <td colspan="7">
                 <a href="default.aspx">Tilbage til album-oversigten</a></td>
         </tr>
-
-
-
+            
         </table>
-
+    
 </asp:Content>
 
