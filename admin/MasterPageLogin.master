@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="admin_AdminMasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageLogin.master.cs" Inherits="admin_MasterPageLogin" %>
 
 <!DOCTYPE html>
 
@@ -88,32 +88,28 @@
             </nav>
 
         </div>
+
+
+    <div id="contentAdmin">
+
+
         <form id="form2" runat="server">
 
-            <div id="contentAdmin">
 
-
-
-
-
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
-                </asp:ContentPlaceHolder>
-
-
-
-            </div>
-
-            <footer>
-
-
-                <div id="footer"><a href="../default.aspx">Forside</a></div>
-                <asp:Button ID="logout" runat="server" CssClass="btn btn-default" Text="Log out" OnClick="logoutClick" Visible="False" />
-
-
-            </footer>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
 
         </form>
 
+    </div>
+
+    <footer>
+
+        <div id="footer"><a href="../default.aspx">Forside</a></div>
+
+    </footer>
+
+        
     </div>
 
 </body>
