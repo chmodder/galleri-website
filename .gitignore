@@ -3,9 +3,9 @@
 #################
 
 # Excluding images
-upload/originals
-upload/thumbs
-upload/originalsResized
+upload/originals/
+upload/thumbs/
+upload/originalsResized/
 
 
 *.pydevproject
