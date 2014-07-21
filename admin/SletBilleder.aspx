@@ -33,6 +33,8 @@
 
     <asp:Label ID="Label_msg" runat="server"></asp:Label>
 
+    <%--<asp:TextBox ID="Label_slet_msg" runat="server"></asp:TextBox>--%>
+
     <asp:Button ID="sletBtn" runat="server" Text="Slet billedet" OnClick="sletBtn_Click" />
 
     <asp:Button ID="tilAlbumBtn" runat="server" Text="Gå tilbage" OnClick="tilAlbumBtn_Click" />
