@@ -25,16 +25,9 @@ public partial class admin_SletBilleder : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = conn;
 
-        //string urlId = Request.QueryString["id"];
-
-        //if (urlId == null || urlId == "")
-        //{
-        //    urlId = "6";
-        //}
-
         // SQL strengen
-        cmd.CommandText = "SELECT * FROM [billeder] WHERE ([fkAlbumId] = @fkAlbumId)";
-        cmd.Parameters.Add("@fkAlbumId", SqlDbType.Int).Value = Request.QueryString["id"];
+        cmd.CommandText = "SELECT * FROM [billeder] WHERE [Id] = @Id";
+        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = Request.QueryString["id"];
 
         //åben for forbindelsen til databasen
         conn.Open();
@@ -45,6 +38,8 @@ public partial class admin_SletBilleder : System.Web.UI.Page
         {
             billedeID.Text = reader["Id"].ToString();
             billedenavn.Text = reader["imgnavn"].ToString();
+
+            ViewState["imgnavn"] = reader["imgnavn"].ToString();
         }
 
 
@@ -59,14 +54,26 @@ public partial class admin_SletBilleder : System.Web.UI.Page
     {
         try
         {
+
+            string imageName = ViewState["imgnavn"].ToString();
+
             // slet Originalfilen i image/upload/Original/ mappen
-            File.Delete(Server.MapPath("~/upload/originals/" + Request.QueryString["id"].ToString()));
+            File.Delete(Server.MapPath("~/upload/originals/" + imageName));
 
             // Slet Thumbsfilen i /Images/Upload/Thumbs/
-            File.Delete(Server.MapPath("~/upload/thumbs/" + Request.QueryString["id"].ToString()));
+            File.Delete(Server.MapPath("~/upload/thumbs/" + imageName));
 
             // Slet Resized_Original i /Images/Upload/Resized_Original/ mappen
-            File.Delete(Server.MapPath("~/upload/originalsResized/" + Request.QueryString["id"].ToString()));
+            File.Delete(Server.MapPath("~/upload/originalsResized/" + imageName));
+
+            //// slet Originalfilen i image/upload/Original/ mappen
+            //File.Delete(Server.MapPath("~/upload/originals/") + Request.QueryString["id"].ToString());
+
+            //// Slet Thumbsfilen i /Images/Upload/Thumbs/
+            //File.Delete(Server.MapPath("~/upload/thumbs/") + Request.QueryString["id"].ToString());
+
+            //// Slet Resized_Original i /Images/Upload/Resized_Original/ mappen
+            //File.Delete(Server.MapPath("~/upload/originalsResized/") + Request.QueryString["id"].ToString());
 
             // slet filen i databasen
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString());
