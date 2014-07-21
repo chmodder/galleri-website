@@ -14,6 +14,11 @@ using System.Drawing.Drawing2D;
 
 public partial class admin_opretBillede : System.Web.UI.Page
 {
+    protected void tilbageBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("visBilleder.aspx?id=" + Request.QueryString["id"]);
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         //SqlConnection conn = new SqlConnection();
@@ -169,10 +174,7 @@ public partial class admin_opretBillede : System.Web.UI.Page
         }
         return null;
     }
-    protected void tilbageBtn_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("visBilleder.aspx?id=" + Request.QueryString["id"]);
-    }
+    
 }
     #endregion
 
